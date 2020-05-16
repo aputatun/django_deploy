@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Help Page</title>
+    <link rel="stylesheet" href="{% static "css/getcss.css" %}"/>
+  </head>
+  <body>
+    <h1>Hi Welcome to Django with Database</h1>
+    {% if insert_user %}
+      {% for ind in insert_user %}
+      <ol>
+        <li>User Info</li>
+        <ul>
+            <li>FirstName: {{ind.userfirst}}</li>
+            <li>LastName: {{ind.userlast}}</li>
+            <li>Email : {{ind.userEmail}}</li>
+        </ul>
+      </ol>
+      {% endfor %}
+    {% else %}
+      <p>No records found</p>
+    {% endif %}
+
+  </body>
+</html>
